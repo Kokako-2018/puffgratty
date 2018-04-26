@@ -10,12 +10,15 @@ class Items extends React.Component {
   }
 
   getItem (item) {
-    const {id, name, description, appearance} = item
+    const {id, name, location, gratitude, appearance} = item
+    console.log(item)
     return (
       <tr key={id} className="item" onClick={() => this.props.editItem(id)} onContextMenu={(evt) => this.deleteItem(evt, id)}>
         <td className="item-name">{name}</td>
-        <td className="item-description">{description}</td>
-        <td className="item-color" style={{backgroundColor: appearance.color}}></td>
+        <td className="item-description">{location}</td>
+        <td className="item-description">{gratitude}</td>
+        <td className="item-theme" style={{backgroundColor: appearance.color}}>{appearance.theme}</td>
+        {/* styling note: appearance.color could change to grats.theme */}
       </tr>
     )
   }
@@ -35,8 +38,9 @@ class Items extends React.Component {
             <thead>
               <tr>
                 <th className="item-name">Name</th>
-                <th className="item-description">Description</th>
-                <th className="item-color">Colour</th>
+                <th className="item-description">Location</th>
+                <th className="item-description">Gratitude</th>
+                <th className="item-color">Theme</th>
               </tr>
             </thead>
             <tbody>
