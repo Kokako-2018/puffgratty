@@ -1,6 +1,7 @@
 import React from 'react'
 import Puff from './Puff'
 import Navbar from './Navbar'
+import {connect} from 'react-redux'
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Main extends React.Component {
   }
 
   showNav() {
-    
+
   }
 
   render(){
@@ -30,4 +31,8 @@ class Main extends React.Component {
   }
 }
 
-export default Main
+function mapStateToProps(state) {
+  
+}
+
+export default connect(mapStateToProps)(Main)
