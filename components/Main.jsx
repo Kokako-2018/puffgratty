@@ -1,5 +1,6 @@
 import React from 'react'
 import Puff from './Puff'
+import Navbar from './Navbar'
 
 class Main extends React.Component {
   constructor(props) {
@@ -10,10 +11,21 @@ class Main extends React.Component {
     } 
   }
 
+  showNav() {
+    
+  }
 
   render(){
     return(
-      <Puff/>
+      <div className='main'>
+        <div className='puff'>
+          <Puff/>
+        </div>
+        <div className='navbar'>
+          <button className='butnav' onClick={this.showNav}>Navigate</button>          
+          <Navbar/>
+        </div>
+      </div>
     )
   }
 }

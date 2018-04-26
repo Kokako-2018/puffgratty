@@ -45,3 +45,23 @@ table {
 form button {
   margin-right: 0.5rem;
 }
+
+
+
+
+
+
+
+
+.puff {
+  color: peachpuff;
+  width: 80%;
+}
+
+.navbar {
+  width: 20%;
+}
+
+.main {
+  display: flex;
+}
