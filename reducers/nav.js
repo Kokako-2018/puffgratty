@@ -19,7 +19,4 @@ const nav = (state = initialNav, action) => {
 }
 
 
-
-
-
 export default nav
