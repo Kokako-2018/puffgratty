@@ -50,7 +50,7 @@ export default {
             theme: 'Basic Necessities',
         }, {
             id: 9,
-            name: 'Tabby Besley',
+            name: 'Tabby',
             location: 'Wellington, NZ',
             gratitude: 'Queer youth resources',
             theme: 'General/Other',
