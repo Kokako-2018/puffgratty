@@ -1,7 +1,11 @@
+export const SHOW_NAV = 'SHOW_NAV' 
+
 export const showNav = () => {
-  return{
+  console.log('helo action')
+  return {
     type: 'SHOW_NAV'
   }
+
 }
 
 export const hideNav = () => {

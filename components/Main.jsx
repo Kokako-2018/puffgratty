@@ -2,6 +2,7 @@ import React from 'react'
 import Puff from './Puff'
 import Navbar from './Navbar'
 import {connect} from 'react-redux'
+import {showNav, hideNav} from '../actions/nav'
 
 class Main extends React.Component {
   constructor(props) {
@@ -10,13 +11,19 @@ class Main extends React.Component {
     this.state = {
 
     } 
+
+   this.showNav = this.showNav.bind(this) 
+
   }
 
   showNav() {
-
+    this.props.nav.navToggle ? 
+      this.props.dispatch(hideNav()) :
+      this.props.dispatch(showNav())
   }
 
   render(){
+    console.log(this.props.nav)
     return(
       <div className='main'>
         <div className='puff'>
@@ -24,7 +31,7 @@ class Main extends React.Component {
         </div>
         <div className='navbar'>
           <button className='butnav' onClick={this.showNav}>Navigate</button>          
-          <Navbar/>
+          {this.props.nav.navToggle && <Navbar/>}
         </div>
       </div>
     )
@@ -32,7 +39,12 @@ class Main extends React.Component {
 }
 
 function mapStateToProps(state) {
-  
+  let nav = state.nav
+  console.log('map', nav)
+  return {
+    nav
+  }
+
 }
 
 export default connect(mapStateToProps)(Main)

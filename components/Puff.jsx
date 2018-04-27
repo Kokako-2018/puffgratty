@@ -19,8 +19,9 @@ class Puff extends React.Component {
           var y = Math.floor(Math.random()*1000)
           var positionStyle = {position: 'absolute', top: x, left: y}
           return (
-            <div>
-              <h2 style={positionStyle}>{grat.name}</h2>
+            <div className='pulse' style={positionStyle}>
+              <h2>{grat.name}</h2>
+              <p>{grat.gratitude}</p>
             </div>
           )
         })}
