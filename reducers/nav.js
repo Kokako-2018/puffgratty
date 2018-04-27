@@ -5,7 +5,7 @@ const initialNav = {
 }
 
 const nav = (state = initialNav, action) => {
-  console.log('hello reducer', action)
+  //console.log('hello reducer', action)
   switch (action.type) {
     case 'SHOW_NAV':
       var toggle = {navToggle: true}
@@ -17,9 +17,6 @@ const nav = (state = initialNav, action) => {
       return state  
   }
 }
-
-
-
 
 
 export default nav

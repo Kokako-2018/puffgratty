@@ -1,4 +1,6 @@
+// import {addItem} from '../localDb'
 import * as localDb from '../localDb'
+// var localDb = require('../localDb')
 
 export const addItem = item => ({
   type: 'ADD_ITEM',
@@ -36,3 +38,4 @@ export const deleteItem = id => {
     id
   }
 }
+

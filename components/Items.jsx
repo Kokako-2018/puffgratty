@@ -11,14 +11,14 @@ class Items extends React.Component {
   }
 
   getItem (item) {
-    const {id, name, location, gratitude, appearance} = item
+    const {id, name, location, gratitude, theme} = item
     console.log(item)
     return (
       <tr key={id} className="item" onClick={() => this.props.editItem(id)} onContextMenu={(evt) => this.deleteItem(evt, id)}>
         <td className="item-name">{name}</td>
         <td className="item-description">{location}</td>
         <td className="item-description">{gratitude}</td>
-        <td className="item-theme" style={{backgroundColor: appearance.color}}>{appearance.theme}</td>
+        <td className="item-theme" style={{backgroundColor: 'lightgreen'}}>{theme}</td>
         {/* styling note: appearance.color could change to grats.theme */}
       </tr>
     )
