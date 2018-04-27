@@ -13,7 +13,7 @@ class Navbar extends React.Component {
   render(){
     return(
       <div>
-        <button>Add Puff</button> <br/>
+        <button className='addpuff'>Add Puff</button> <br/>
         {this.state.themes.map((theme) => {
           return <button>{theme}</button>        
         })}
