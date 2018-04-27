@@ -5,10 +5,11 @@ import items from './items'
 export const item = {
   name: '',
   location: '',
-  theme: '',
-  appearance: {
-    color: 'aliceblue',
-  }
+  gratitude: '',
+  theme: ''
+  // appearance: {
+  //   color: 'aliceblue',
+  // }
 }
 
 export default createForms({

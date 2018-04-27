@@ -46,6 +46,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
+    "react-p5-wrapper": "^0.0.4",
     "babel-jest": "^22.4.3",
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
