@@ -23,7 +23,7 @@ class Main extends React.Component {
   }
 
   render(){
-    console.log(this.props.nav)
+    //console.log(this.props.nav)
     return(
       <div className='main'>
         <div className='puff'>
@@ -40,7 +40,7 @@ class Main extends React.Component {
 
 function mapStateToProps(state) {
   let nav = state.nav
-  console.log('map', nav)
+  //console.log('map', nav)
   return {
     nav
   }

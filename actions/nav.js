@@ -1,7 +1,7 @@
 export const SHOW_NAV = 'SHOW_NAV' 
 
 export const showNav = () => {
-  console.log('helo action')
+  //console.log('helo action')
   return {
     type: 'SHOW_NAV'
   }
