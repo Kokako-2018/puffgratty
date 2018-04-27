@@ -29,9 +29,6 @@ class Items extends React.Component {
     return (
       <div className="row">
         <div className="two-thirds column">
-          <h1>Items</h1>
-          <p>Here you can browse our shared Grattys. Click the Theme button to sort. </p>
-          <p>Use the form on the right to add your own to PuffyGratty!</p>
           <table className="u-full-width">
             <thead>
               <tr>
@@ -41,7 +38,7 @@ class Items extends React.Component {
                 <th className="item-color">Theme</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="tbody">
               {this.props.items.map(item => this.getItem(item))}
             </tbody>
           </table>
@@ -51,7 +48,7 @@ class Items extends React.Component {
           <h2>{editing ? 'Edit' : 'Add an'} item</h2>
           {editing ? (<EditItemForm />) : (<ItemForm />)}
 
-          <p>Above component is <strong>&lt;{editing ? 'Edit' : ''}ItemForm /&gt;</strong>. The colour chooser is in the Fieldset component <strong>&lt;ColorChooser /&gt;</strong></p>
+          <p>Use the form above to add your own to PuffGratty!</p>
         </div>
       </div>
     )
