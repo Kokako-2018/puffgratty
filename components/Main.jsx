@@ -4,6 +4,8 @@ import Navbar from './Navbar'
 import {connect} from 'react-redux'
 import {showNav, hideNav} from '../actions/nav'
 
+import Animation from './Cloud/Animation'
+
 class Main extends React.Component {
   constructor(props) {
     super(props)
@@ -25,7 +27,11 @@ class Main extends React.Component {
   render(){
     //console.log(this.props.nav)
     return(
-      <div className='main'>
+      <div style={{position: 'relative'}}>
+        <div style={{position: 'absolute'}}>
+          <Animation />
+        </div>
+        <div className='main' style={{position: 'absolute'}}>
         <div className='puff'>
           <Puff/>
         </div>
@@ -34,6 +40,8 @@ class Main extends React.Component {
           {this.props.nav.navToggle && <Navbar/>}
         </div>
       </div>
+      </div>
+      
     )
   }
 }
