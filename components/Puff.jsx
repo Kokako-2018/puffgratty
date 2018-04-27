@@ -1,5 +1,6 @@
 import React from 'react'
 import data from '../data/grats'
+import {connect} from 'react-redux'
 
 class Puff extends React.Component {
   constructor(props) {
@@ -31,4 +32,13 @@ class Puff extends React.Component {
   }
 }
 
-export default Puff
+function mapStateToProps(state) {
+  console.log("puffstate", state.items)
+  let items = state.items
+  console.log('Puffmap', items)
+  return {
+    items
+  }
+}
+
+export default connect(mapStateToProps)(Puff)

@@ -1,4 +1,9 @@
-const items = (state = [], action) => {
+import gratsData from '../data/grats'
+
+const initialGrats = gratsData.grats
+
+const items = (state = initialGrats, action) => {
+  console.log(initialGrats)
   switch (action.type) {
     case 'GET_ITEMS':
       return action.items
