@@ -1,6 +1,7 @@
 import React from 'react'
 import Main from './Main'
 import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import ItemsContainer from '../containers/ItemsContainer.js'
 
 
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
     return (
       <Router>
         <React.Fragment>
-          {/* <Route exact path='/form' component={Form}/> */}
+          <Route exact path='/form' component={ItemsContainer}/>
           <Route exact path='/' component={Main}/>          
         </React.Fragment>
       </Router>
