@@ -45,3 +45,48 @@ table {
 form button {
   margin-right: 0.5rem;
 }
+
+
+
+
+
+
+
+
+.puff {
+  color: indianred;
+  width: 80%;
+}
+
+.navbar {
+  width: 20%;
+  margin-top: 20em; 
+}
+
+.butnav {
+  color: white;
+  background-color: indianred;
+}
+
+.addpuff {
+  color: indianred;
+}
+
+.main {
+  display: flex;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  30% { transform: scale(1); }
+  40% { transform: scale(1.08); }
+  50% { transform: scale(1); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.05); }
+  80% { transform: scale(1); }
+  100% { transform: scale(1); }
+}

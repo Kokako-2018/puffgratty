@@ -1,73 +1,40 @@
-// const catReducer = require('../client/reducer')
+import nav from '../reducers/nav'
 
-// test('Reducer initial state', () => {
-//   const expected = []
-//   const action = {}
+test('Reducer initial state', () => {
+  //Arrange  
+  const expected = {
+    navToggle: false
+  }
+  const action = {}
+  //Act  
+  const actual = nav(undefined, action)
+  //Assert  
+  expect(actual).toEqual(expected)
+})
 
-//   const actual = catReducer(undefined, action)
 
-//   expect(actual).toEqual(expected)
-// })
+test('SHOW NAV case', () => {
+  //Arrange    
+  const expected = {navToggle: true}
+  const action = {
+    type: 'SHOW_NAV'
+  }
+  //Act  
+  const actual = nav(undefined, action)
+  //Assert  
+  expect(actual).toEqual(expected)
+})
 
-// test('Add Cat case', () => {
-//   const cat = {
-//     name: 'Harrison'
-//   }
-//   const expected = [
-//     cat
-//   ]
-//   const action = {
-//     type: 'ADD_CAT',
-//     cat
-//   }
 
-//   const actual = catReducer([], action)
-
-//   expect(actual).toEqual(expected)
-//   expect(actual[0]).toBe(cat)
-// })
-
-// test('Add a second Cat case', () => {
-//   const initialState = [
-//     {name: 'Rosie'}
-//   ]
-//   const cat = {
-//     name: 'Harrison'
-//   }
-//   const action = {
-//     type: 'ADD_CAT',
-//     cat
-//   }
-
-//   const expectedState = [
-//     {name: 'Rosie'},
-//     cat
-//   ]
-
-//   const actual = catReducer(initialState, action)
-
-//   expect(actual).toEqual(expectedState)
-//   expect(actual[1]).toBe(cat)
-// })
-
-// test('delete cat case', () => {
-//   const cat = {
-//     name: 'Rosie'
-//   }
-//   const action = {
-//     type: 'DEL_CAT',
-//     cat
-//   }
-//   const initialState = [
-//     cat,
-//     {name: 'Harrison'},
-//     {name: 'Excellent'}
-//   ]
-//   // const expected = []
-
-//   const actual = catReducer(initialState, action)
-
-//   // expect(actual).toEqual(expected)
-//   expect(actual).toHaveLength(initialState.length - 1)
-//   expect(actual.find(actualCat => actualCat.name == cat.name)).toBeFalsy()
-// })
+test('HIDE NAV case', () => {
+  //Arrange  
+  const expected = {navToggle: false}
+  const action = {
+    type: 'HIDE_NAV'
+  }
+  const initialState = {navToggle: true}
+  //Act  
+  const actual = nav(initialState, action)
+  //Assert  
+  expect(actual).toEqual(expected)
+})

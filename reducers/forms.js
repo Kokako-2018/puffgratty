@@ -7,7 +7,7 @@ export const item = {
   location: '',
   theme: '',
   appearance: {
-    color: 'aliceblue'
+    color: 'aliceblue',
   }
 }
 
