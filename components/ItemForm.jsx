@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {actions, Control, Errors, Form} from 'react-redux-form'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 // import itemColors from '../itemColors'
 import themeNames from '../themeNames'
@@ -16,7 +17,7 @@ class ItemForm extends React.Component {
 
   handleSubmit (item) {
     const {dispatch} = this.props
-    console.log(item)
+    console.log('HandleSUb',item)
     dispatch(addItem(item))
     dispatch(actions.reset('item'))
   }
@@ -42,6 +43,9 @@ class ItemForm extends React.Component {
         <ThemeChooser themes={themeNames} />
 
         <button type='submit' className='button-primary'>Add</button>
+
+        <Link to='/'><button>Back to Puffs</button></Link>
+
       </Form>
     )
   }
