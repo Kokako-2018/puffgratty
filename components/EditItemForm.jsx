@@ -2,8 +2,10 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Control, Errors, Form, track} from 'react-redux-form'
 
-import itemColors from '../itemColors'
-import ColorChooser from './ColorChooser'
+// import itemColors from '../itemColors'
+import themeNames from '../themeNames'
+// import ColorChooser from './ColorChooser'
+import ThemeChooser from './ThemeChooser'
 import {getItems, saveItem, stopEditing} from '../actions/items'
 
 class EditItemForm extends React.Component {
@@ -39,10 +41,13 @@ class EditItemForm extends React.Component {
           messages={{isRequired: 'Please provide a name.'}}
         />
 
-        <label>Description:</label>
-        <Control.textarea model=".description" className="u-full-width" />
+        <label>Location:</label>
+        <Control.textarea model=".location" className="u-full-width" />
 
-        <ColorChooser colors={itemColors} />
+      <label>Gratitude:</label>
+        <Control.textarea model='.gratitude' className='u-full-width' />
+
+        <ThemeChooser themes={themeNames} />
 
         <button type="submit" className="button-primary">Save</button>
         <button onClick={this.cancel}>Cancel</button>

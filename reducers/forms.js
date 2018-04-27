@@ -4,9 +4,10 @@ import items from './items'
 
 export const item = {
   name: '',
-  description: '',
+  location: '',
+  theme: '',
   appearance: {
-    color: 'aliceblue'
+    color: 'aliceblue',
   }
 }
 
