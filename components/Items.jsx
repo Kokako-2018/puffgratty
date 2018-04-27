@@ -2,6 +2,7 @@ import React from 'react'
 
 import EditItemForm from './EditItemForm'
 import ItemForm from './ItemForm'
+import Sorter from '../sorter'
 
 class Items extends React.Component {
   deleteItem (evt, id) {
@@ -10,12 +11,15 @@ class Items extends React.Component {
   }
 
   getItem (item) {
-    const {id, name, description, appearance} = item
+    const {id, name, location, gratitude, appearance} = item
+    console.log(item)
     return (
       <tr key={id} className="item" onClick={() => this.props.editItem(id)} onContextMenu={(evt) => this.deleteItem(evt, id)}>
         <td className="item-name">{name}</td>
-        <td className="item-description">{description}</td>
-        <td className="item-color" style={{backgroundColor: appearance.color}}></td>
+        <td className="item-description">{location}</td>
+        <td className="item-description">{gratitude}</td>
+        <td className="item-theme" style={{backgroundColor: appearance.color}}>{appearance.theme}</td>
+        {/* styling note: appearance.color could change to grats.theme */}
       </tr>
     )
   }
@@ -26,17 +30,15 @@ class Items extends React.Component {
       <div className="row">
         <div className="two-thirds column">
           <h1>Items</h1>
-
-          <p>Left-click to edit, right-click to delete. (Probably not the best UX for a production app!)</p>
-          <p>Notice that when you edit an item, the item on the list updates in place. If you didn&apos;t want this behaviour, you&apos;d have to provide a temporary object of some sort for the form to use, only saving it to the store when it was validated.</p>
-          <p>The &quot;Save&quot; button triggers a validation check prior to changing the record in local storage. The &quot;Cancel&quot; button effectively discards the changes by reloading the items from local storage.</p>
-
+          <p>Here you can browse our shared Grattys. Click the Theme button to sort. </p>
+          <p>Use the form on the right to add your own to PuffyGratty!</p>
           <table className="u-full-width">
             <thead>
               <tr>
                 <th className="item-name">Name</th>
-                <th className="item-description">Description</th>
-                <th className="item-color">Colour</th>
+                <th className="item-description">Location</th>
+                <th className="item-description">Gratitude</th>
+                <th className="item-color">Theme</th>
               </tr>
             </thead>
             <tbody>
