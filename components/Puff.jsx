@@ -1,5 +1,5 @@
 import React from 'react'
-import data from '../data/grats'
+//import data from '../data/grats'
 import {connect} from 'react-redux'
 
 class Puff extends React.Component {
@@ -15,7 +15,7 @@ class Puff extends React.Component {
   render(){
     return(
       <React.Fragment>
-        {data.grats.map((grat) => {
+        {this.props.items.map((grat) => {
           var x = Math.floor(Math.random()*1000)
           var y = Math.floor(Math.random()*1000)
           var positionStyle = {position: 'absolute', top: x, left: y}
@@ -33,9 +33,9 @@ class Puff extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("puffstate", state.items)
+  //console.log("puffstate", state.items)
   let items = state.items
-  console.log('Puffmap', items)
+  //console.log('Puffmap', items)
   return {
     items
   }
