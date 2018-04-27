@@ -1,4 +1,5 @@
 import React from 'react'
+import {HashRouter as Router, Route, Link} from 'react-router-dom'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -13,10 +14,14 @@ class Navbar extends React.Component {
   render(){
     return(
       <div>
-        <button className='addpuff'>Add Puff</button> <br/>
+        
+      <Link to='/form'>  <button className='addpuff'>Add Puff</button></Link>
+      <br/>
+
         {this.state.themes.map((theme) => {
-          return <button>{theme}</button>        
+          return <button>{theme}</button>       
         })}
+
       </div>
     )
   }
